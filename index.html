@@ -18,7 +18,7 @@
 </head>
 <body>
   <header>
-    <div class="bubble top-left">
+    <div class="bubble top-left big-bubble">
       <div id="home">
         <a href="https://piotress5.github.io/">
           <svg fill="#ffffff" id="home" width="60" height="60" viewBox="-50 -50 600 600">
@@ -28,7 +28,7 @@
         </a>
       </div>
     </div>
-    <div class="bubble top-right">
+    <div class="bubble top-right big-bubble">
       <div id="settings-btn">
         <svg viewBox="0 -3.19 54 54" fill="#ffffff" width="60" height="60">
           <g id="SVGRepo_iconCarrier">
@@ -89,10 +89,10 @@
   </header>
   <section>
     <div class="application">
-      <div class="app-clock-digital">
+      <div class="app-clock-digital back-border">
         <span class="digital-display time"></span>
       </div>
-      <div class="app-clock-analog">
+      <div class="app-clock-analog back-border">
         <div class="analog-numbers-container">
           <span class="analog-numbers">1</span>
           <span class="analog-numbers">2</span>
@@ -113,14 +113,14 @@
           <div class="analog-hand hour-hand"></div>
         </div>
       </div>
-      <div class="app-stopwatch">
+      <div class="app-stopwatch back-border">
         <span class="stopwatch-display time">00:00:00.000</span>
         <div class="stopwatch-buttons">
           <button class="start">Start</button>
           <button class="reset disabled">Reset</button>
         </div>
       </div>
-      <div class="app-timer">
+      <div class="app-timer back-border">
         <div class="timer-container">
           <input type="number" name="hours" id="hours" placeholder="h" min="0" max="999">
           <span></span>
@@ -140,34 +140,36 @@
       <svg fill="white" id="cross" width="40" height="40" viewBox="0 0 460.775 460.775">
         <path id="krzyzyk" d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"></path>
       </svg>
-      <div class="settings-options">
-        <div class="settings-option">
-          <label for="fullscreen">Fullscreen mode: </label>
-          <input type="checkbox" name="fullscreen" id="fullscreen">
-        </div>
-        <div class="settings-option">
-          <label for="delay">Fullscreen delay (in seconds): </label>
-          <input type="number" name="delay" id="delay" value="10" min="0" max="3600">
-        </div>
-        <div class="settings-option">
-          <label for="sound">Sound: </label>
-          <input type="range" name="sound" id="sound" value="100" min="0" max="200">
-          <span class="sound-value">100</span>
-        </div>
-        <div class="settings-option">
-          <label for="music">Music: </label>
-          <input type="range" name="music" id="music" value="100" min="0" max="200">
-          <span class="music-value">100</span>
-        </div>
-        <div class="settings-option input-hidden">
-          <label for="custom-sound">Add sound: </label>
-          <input type="file" name="custom-sound" id="custom-sound" accept="audio/*">
-          <button class="custom-sound-btn">Add</button>
-        </div>
-        <div class="settings-option input-hidden">
-          <label for="custom-music">Add music: </label>
-          <input type="file" name="custom-music" id="custom-music" accept="audio/*">
-          <button class="custom-music-btn">Add</button>
+      <div class="settings-container">
+        <div class="settings-options">
+          <div class="settings-option">
+            <label for="fullscreen">Fullscreen mode: </label>
+            <input type="checkbox" name="fullscreen" id="fullscreen">
+          </div>
+          <div class="settings-option">
+            <label for="delay">Fullscreen delay (in seconds): </label>
+            <input type="number" name="delay" id="delay" value="5" min="0" max="3600">
+          </div>
+          <div class="settings-option">
+            <label for="sound">Sound: </label>
+            <input type="range" name="sound" id="sound" value="100" min="0" max="100">
+            <span class="sound-value">100</span>
+          </div>
+          <div class="settings-option">
+            <label for="music">Music: </label>
+            <input type="range" name="music" id="music" value="0" min="0" max="100">
+            <span class="music-value">0</span>
+          </div>
+          <div class="settings-option input-hidden">
+            <label for="custom-sound">Custom sound: </label>
+            <input type="file" name="custom-sound" id="custom-sound" accept="audio/*">
+            <button class="custom-sound-btn">Add</button>
+          </div>
+          <div class="settings-option input-hidden">
+            <label for="custom-music">Custom music: </label>
+            <input type="file" name="custom-music" id="custom-music" accept="audio/*">
+            <button class="custom-music-btn">Add</button>
+          </div>
         </div>
       </div>
     </div>
@@ -180,7 +182,7 @@
         <div class="customize-options">
           <div class="customize-option">
             <label for="scale">Scale: </label>
-            <input type="range" name="scale" id="scale" value="100" min="50" max="200">
+            <input type="range" name="scale" id="scale" value="100" min="50" max="300">
             <span class="scale-value">1</span>
           </div>
           <p class="color-label">Background colors:</p>
@@ -190,10 +192,12 @@
             <input type="color" name="back-color" value="#050327">
             <input type="color" name="back-color" value="#000000">
           </div>
-          <p class="color-label">Bubbles colors:</p>
+          <p class="color-label">Bubbles & Buttons colors:</p>
           <div class="customize-option colors-container">
             <input type="color" name="bubble-color" value="#1e1a63">
+            <input type="color" name="bubble-color" value="#050327">
             <input type="color" name="bubble-color" value="#000000">
+            <input type="color" name="bubble-color" value="#ffffff">
           </div>
           <p class="color-label">Analog clock hands:</p>
           <div class="customize-option colors-container">
@@ -205,10 +209,14 @@
             <label for="pointers">Show pointers (analog clock): </label>
             <input type="checkbox" name="pointers" id="pointers">
           </div>
+          <div class="customize-option">
+            <label for="app-background">Show application's background: </label>
+            <input type="checkbox" name="app-background" id="app-background" checked>
+          </div>
           <div class="customize-option select-container">
             <label for="digital-font">Digital clock font: </label>
             <select name="digital-font" id="digital-font">
-              <option value="Anta">Anta</option>
+              <option value="Anta" selected>Anta</option>
               <option value="Electrolize">Electrolize</option>
               <option value="Orbitron">Orbitron</option>
               <option value="Oxanium">Oxanium</option>
@@ -222,19 +230,19 @@
               <option value="Electrolize">Electrolize</option>
               <option value="Orbitron">Orbitron</option>
               <option value="Oxanium">Oxanium</option>
-              <option value="Syncopate">Syncopate</option>
+              <option value="Syncopate" selected>Syncopate</option>
             </select>
           </div>
           <p class="color-label">Font color:</p>
           <div class="customize-option colors-container">
-            <input type="color" name="font-color" value="#000000">
+            <input type="color" name="font-color" value="#ffffff">
           </div>
           <div class="customize-option">
             <label for="blobs">Blobs: </label>
             <input type="checkbox" name="blobs" id="blobs">
           </div>
           <div class="customize-option input-hidden">
-            <label for="custom-background">Add background: </label>
+            <label for="custom-background">Custom background: </label>
             <input type="file" name="custom-background" id="custom-background" accept="image/*">
             <button class="custom-background-btn">Add</button>
           </div>
@@ -243,7 +251,7 @@
     </div>
   </section>
   <footer>
-    <div class="bubble bottom-left">
+    <div class="bubble bottom-left big-bubble">
       <div id="customize-btn">
         <svg viewBox="0 0 325 325" fill="#ffffff" height="50" width="50" stroke="#ffffff">
           <g id="SVGRepo_iconCarrier">
@@ -255,7 +263,7 @@
       </div>
     </div>
     <p class="info"><em>Copyright 2025 © Piotr Cieśla</em></p>
-    <div class="bubble bottom-right">
+    <div class="bubble bottom-right big-bubble">
       <div class="logo">
         <a href="https://github.com/Piotress5">
           <img src="img/github-mark-white.png" alt="github">
