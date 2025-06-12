@@ -19,6 +19,7 @@ const settings_panel = document.querySelector("div.settings");
 const settings_cross = document.querySelector("svg#cross");
 const settings_fullscreen_btn = document.querySelector('input[name="fullscreen"]');
 const settings_delay_btn = document.querySelector('input[name="delay"]');
+const settings_title_time_btn = document.querySelector('input[name="title-time"]');
 const settings_sound_range = document.querySelector('input[name="sound"]');
 const settings_sound_label = document.querySelector("span.sound-value");
 const settings_sound_btn = document.querySelector("button.custom-sound-btn");
@@ -85,6 +86,11 @@ setInterval(() => {
     date = new Date();
     time = date.toLocaleTimeString();
     clock_digital_display.innerText = time;
+    if (settings_title_time_btn.checked == true) {
+        document.title = time;
+    } else {
+        document.title = "Clock";
+    }
 }, 500);
 
 //obrót zegara analogowego
@@ -382,6 +388,7 @@ settings_sound_btn.addEventListener("click", () => {
     if (settings_sound_btn.innerText == "Remove") {
         settings_sound_btn.innerText = "Add";
         beep.src = 'media/beeping.mp3';
+        text_parent.innerText = "Copyright 2025 © Piotr Cieśla";
         return;
     }
     if (settings_sound_handler) {
@@ -426,6 +433,7 @@ settings_music_btn.addEventListener("click", () => {
     if (settings_music_btn.innerText == "Remove") {
         settings_music_btn.innerText = "Add";
         ambient.src = 'media/ambient.mp3';
+        text_parent.innerText = "Copyright 2025 © Piotr Cieśla";
         return;
     }
     if (settings_music_handler) {
@@ -453,7 +461,9 @@ function handle_music() {
         file_handler = URL.createObjectURL(fileList[i]);
         ambient.src = file_handler;
         ambient.volume = settings_music_range.value / 100;
-        ambient.play();
+        if (ambient.volume > 0) {
+            ambient.play();
+        }
     }
 }
 
@@ -543,6 +553,7 @@ customize_background_btn.addEventListener("click", () => {
     if (customize_background_btn.innerText == "Remove") {
         customize_background_btn.innerText = "Add";
         section.style.backgroundImage = "";
+        text_parent.innerText = "";
         return;
     }
     if (customize_background_handler) {
@@ -571,7 +582,6 @@ function handle_background() {
         file_handler = URL.createObjectURL(fileList[i]);
         section.style.backgroundImage = "url(" + file_handler + ")";
         section.style.backgroundRepeat = "no-repeat";
-        // section.style.backgroundSize = "contain";
         section.style.backgroundSize = "cover";
         section.style.backgroundPosition = "center";
     }

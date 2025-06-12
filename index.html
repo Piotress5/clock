@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TBA">
+  <meta name="description" content="Multipurpose time-measuring app. Check time, schedule alarms and customize your own Clock!">
   <meta name="author" content="Piotress5">
   <link rel="stylesheet" href="style.css">
 
@@ -147,16 +147,26 @@
             <input type="checkbox" name="fullscreen" id="fullscreen">
           </div>
           <div class="settings-option">
-            <label for="delay">Fullscreen delay (in seconds): </label>
+            <label for="delay" class="hover-info">Fullscreen delay (in seconds):
+              <span class="tooltiptext">Setting value to 0 will disable Fullscreen mode.</span>
+            </label>
             <input type="number" name="delay" id="delay" value="5" min="0" max="3600">
           </div>
           <div class="settings-option">
-            <label for="sound">Sound: </label>
+            <label for="title-time">Display time on card title: </label>
+            <input type="checkbox" name="title-time" id="title-time">
+          </div>
+          <div class="settings-option">
+            <label for="sound" class="hover-info">Sound:
+              <span class="tooltiptext">Setting value to 0 will disable sound.</span>
+            </label>
             <input type="range" name="sound" id="sound" value="100" min="0" max="100">
             <span class="sound-value">100</span>
           </div>
           <div class="settings-option">
-            <label for="music">Music: </label>
+            <label for="music" class="hover-info">Music:
+              <span class="tooltiptext">Setting value to 0 will disable/pause music.</span>
+            </label>
             <input type="range" name="music" id="music" value="0" min="0" max="100">
             <span class="music-value">0</span>
           </div>
@@ -236,10 +246,6 @@
           <p class="color-label">Font color:</p>
           <div class="customize-option colors-container">
             <input type="color" name="font-color" value="#ffffff">
-          </div>
-          <div class="customize-option">
-            <label for="blobs">Blobs: </label>
-            <input type="checkbox" name="blobs" id="blobs">
           </div>
           <div class="customize-option input-hidden">
             <label for="custom-background">Custom background: </label>
