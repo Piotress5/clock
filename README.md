@@ -8,7 +8,7 @@
 * [Features](#features)
 * [Setup](#setup)
 * [Project Status](#project-status)
-* [Disclaimer](#disclaimer)
+* [Disclaimer](#-disclaimer-)
 * [Room for Improvement](#room-for-improvement)
 
 
