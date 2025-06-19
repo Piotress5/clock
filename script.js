@@ -86,6 +86,9 @@ setInterval(() => {
     date = new Date();
     time = date.toLocaleTimeString();
     clock_digital_display.innerText = time;
+    if (time.includes("AM") || time.includes("PM")) {
+        clock_digital_display.classList.add("smaller-text");
+    }
     if (settings_title_time_btn.checked == true) {
         document.title = time;
     } else {

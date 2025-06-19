@@ -15,9 +15,9 @@
 }
 
 body {
-    height: 100vh;
+    height: 100dvh;
     position: relative;
-    background: var(--backColor1);
+    background: var(--backColor4, rgb(0, 0, 0));
     color: var(--fontColor);
     overflow: hidden;
 }
@@ -25,14 +25,14 @@ body {
 header {
     position: relative;
     width: 100vw;
-    height: 270px;
-    overflow-x: clip;
+    height: max(270px, 50dvh);
+    overflow-x: hidden;
     z-index: 1;
 }
 
 section {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background: radial-gradient(circle, var(--backColor1, rgb(17, 14, 77)),
     var(--backColor2, rgb(8, 5, 58)), var(--backColor3, rgb(5, 3, 39)),
     var(--backColor4, rgb(0, 0, 0)));
@@ -146,9 +146,12 @@ div#customize-btn {
 }
 
 p.info {
+    width: 100%;
     text-align: center;
-    position: relative;
+    position: absolute;
     bottom: 50px;
+    left: 50vw;
+    transform: translate(-50%, -0%);
     z-index: 0;
     visibility: hidden;
     transition: 0.3s;
@@ -178,9 +181,10 @@ div.logo {
 
 footer {
     width: 100vw;
+    height: 50dvh;
     position: absolute;
     bottom: -1em;
-    overflow-x: clip;
+    overflow: hidden;
 }
 
 footer img {
@@ -264,6 +268,7 @@ div.application {
 div.back-border {
     border: var(--appBorder, 3px solid black);
     background: var(--appBackground, rgba(0, 0, 0, 0.3));
+    z-index: 10;
 }
 
 div.app-clock-digital {
@@ -280,6 +285,8 @@ span.time {
     font-weight: bold;
     font-family: var(--digitalFont);
 }
+
+.smaller-text {font-size: 50px !important;}
 
 @media screen and (max-width: 1000px), (max-height: 500px) {
     div.application {
@@ -674,7 +681,7 @@ div.settings-options, div.customize-options {
 
 div.settings-container, div.customize-container {
     width: 60%;
-    height: 75%;
+    height: 70%;
     overflow: auto;
     scrollbar-color: #ffffff rgba(0, 0, 0, 0.2);
     scrollbar-width: thin;
@@ -839,7 +846,7 @@ div.select-container select {
         height: 65%;
     }
     h1.settings-title, h1.customize-title {
-        margin: 1.5em 1.5em 0.5em 1.5em;
+        margin: 1em 1.5em 0.5em 1.5em;
     }
     svg#cross, svg#cross2 {
         width: 30px;
@@ -853,6 +860,7 @@ div.select-container select {
     }
     div.settings-container, div.customize-container {
         width: 97%;
+        height: auto;
         margin-bottom: 10px;
     }
     div.settings-container {
