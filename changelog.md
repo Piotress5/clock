@@ -1,5 +1,8 @@
 # Changelog
 
+========= 1.02 ========
+- Added favicon.
+
 ========= 1.01 ========
 - Fixed display bugs on mobile version.
 
